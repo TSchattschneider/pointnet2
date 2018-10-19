@@ -203,3 +203,4 @@ venv.bak/
 data/
 log/
 dump/
+/scannet/log/

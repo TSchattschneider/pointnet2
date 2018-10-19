@@ -129,16 +129,16 @@ class ModelNetDataset():
     
 if __name__ == '__main__':
     d = ModelNetDataset(root = '../data/modelnet40_normal_resampled', split='test')
-    print(d.shuffle)
-    print(len(d))
+    print((d.shuffle))
+    print((len(d)))
     import time
     tic = time.time()
     for i in range(10):
         ps, cls = d[i]
-    print(time.time() - tic)
-    print(ps.shape, type(ps), cls)
+    print((time.time() - tic))
+    print((ps.shape, type(ps), cls))
 
-    print(d.has_next_batch())
+    print((d.has_next_batch()))
     ps_batch, cls_batch = d.next_batch(True)
-    print(ps_batch.shape)
-    print(cls_batch.shape)
+    print((ps_batch.shape))
+    print((cls_batch.shape))

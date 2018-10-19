@@ -58,7 +58,7 @@ class PartDataset():
             elif split=='test':
                 fns = [fn for fn in fns if fn[0:-4] in test_ids]
             else:
-                print('Unknown split: %s. Exiting..'%(split))
+                print(('Unknown split: %s. Exiting..'%(split)))
                 exit(-1)
                 
             #print(os.path.basename(fns))
@@ -115,17 +115,17 @@ class PartDataset():
 
 if __name__ == '__main__':
     d = PartDataset(root = '../data/shapenetcore_partanno_segmentation_benchmark_v0', class_choice = ['Airplane'], split='test')
-    print(len(d))
+    print((len(d)))
     import time
     tic = time.time()
     for i in range(100):
         ps, seg = d[i]
-        print np.max(seg), np.min(seg)
-    print(time.time() - tic)
-    print(ps.shape, type(ps), seg.shape,type(seg))
+        print(np.max(seg), np.min(seg))
+    print((time.time() - tic))
+    print((ps.shape, type(ps), seg.shape,type(seg)))
     
     d = PartDataset(root = '../data/shapenetcore_partanno_segmentation_benchmark_v0', classification = True)
-    print(len(d))
+    print((len(d)))
     ps, cls = d[0]
-    print(ps.shape, type(ps), cls.shape,type(cls))
+    print((ps.shape, type(ps), cls.shape,type(cls)))
 
